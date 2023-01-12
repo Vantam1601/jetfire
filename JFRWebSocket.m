@@ -287,6 +287,9 @@ static const size_t  JFRMaxFrameSize        = 32;
     if(self.voipEnabled) {
         [self.inputStream setProperty:NSStreamNetworkServiceTypeVoIP forKey:NSStreamNetworkServiceType];
         [self.outputStream setProperty:NSStreamNetworkServiceTypeVoIP forKey:NSStreamNetworkServiceType];
+
+        [self.inputStream setProperty:NSStreamNetworkServiceTypeBackground forKey:NSStreamNetworkServiceType];
+        [self.outputStream setProperty:NSStreamNetworkServiceTypeBackground forKey:NSStreamNetworkServiceType];
     }
     if(self.selfSignedSSL) {
         NSString *chain = (__bridge_transfer NSString *)kCFStreamSSLValidatesCertificateChain;
